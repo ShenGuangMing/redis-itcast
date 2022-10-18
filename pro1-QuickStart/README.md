@@ -62,6 +62,8 @@ Redis诞生于2009年全称是Remote Dictionary Server，
 - 支持多语言客户端
 
 ## 1.3安装Redis
+安装文档：https://github.com/ShenGuangMing/redis-itcast/blob/master/pro1-QuickStart/RedisInstall.md
+
 
 # 2.Redis常用命令
 
