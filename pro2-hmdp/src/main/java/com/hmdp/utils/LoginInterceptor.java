@@ -23,7 +23,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         }
         //在ThreadLocal中获取UserDto
         UserDto user = UserDtoHolder.getUser();
-        log.info("登录拦截器-userDto: {}", user);
+//        log.info("登录拦截器-userDto: {}", user);
         if (user == null) {
             //把请求拦截了，并返回
             response.setStatus(401);

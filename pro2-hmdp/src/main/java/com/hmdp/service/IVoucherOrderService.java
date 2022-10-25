@@ -1,5 +1,7 @@
 package com.hmdp.service;
 
+import com.hmdp.dto.R;
+import com.hmdp.entity.SeckillVoucher;
 import com.hmdp.entity.VoucherOrder;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +15,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IVoucherOrderService extends IService<VoucherOrder> {
 
+    R<Object> seckillVouCher(Long voucherId);
+
+    R<Object> createVoucherOrder(Long voucherId, SeckillVoucher voucher);
 }

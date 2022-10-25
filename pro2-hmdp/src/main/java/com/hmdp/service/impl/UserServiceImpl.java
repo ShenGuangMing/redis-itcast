@@ -128,7 +128,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         //存入redis中
         redisTemplate.opsForHash().putAll(tokenKey, userMap);
         //设置token有效期
-        redisTemplate.expire(tokenKey, RedisConstants.CACHE_SHOP_TTL, TimeUnit.MINUTES);
+        redisTemplate.expire(tokenKey, RedisConstants.LOGIN_USER_TTL, TimeUnit.MINUTES);
     }
 
     private User createUserWithPhone(String phone) {

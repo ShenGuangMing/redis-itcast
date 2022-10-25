@@ -30,7 +30,7 @@ public class RefreshTokenInterceptor implements HandlerInterceptor {
             return true;
         }
         String tokenKey = RedisConstants.LOGIN_USER_KEY + token;
-        log.info("token刷新拦截器-tokenKey: {}", tokenKey);
+//        log.info("token刷新拦截器-tokenKey: {}", tokenKey);
         Map<Object, Object> userMap = redisTemplate.opsForHash().entries(tokenKey);
         if (userMap.isEmpty()) {//为空处理
             return true;
@@ -41,7 +41,7 @@ public class RefreshTokenInterceptor implements HandlerInterceptor {
         redisTemplate.expire(tokenKey, RedisConstants.CACHE_SHOP_TTL, TimeUnit.MINUTES);
         //对象存在就记录到ThreadLocal中
         UserDtoHolder.saveUser(userDto);
-        log.info("token刷新拦截器-userDto: {}", UserDtoHolder.getUser());
+//        log.info("token刷新拦截器-userDto: {}", UserDtoHolder.getUser());
         //不做连接放行所有的请求
         return true;
     }

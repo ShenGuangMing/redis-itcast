@@ -30,7 +30,7 @@ public class CacheClient {
         //写入
         redisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(redisData));
     }
-    public <T, ID> T queryWithLogicalExpire(String keyPrefix, ID id, Class<T> type,
+    public <T, ID> T  queryWithLogicalExpire(String keyPrefix, ID id, Class<T> type,
                                             Function<ID, T> dbFallBack,
                                             Long time, TimeUnit unit
     ) {
